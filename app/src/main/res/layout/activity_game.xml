@@ -6,6 +6,31 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="#3F51B5"
+        android:text="@string/textview3"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="#3F51B5"
+        android:text="@string/textview4"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/activityLog"
+        android:layout_width="match_parent"
+        android:layout_height="417dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
         android:id="@+id/grades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,19 +81,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="visible" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/age"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/age" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

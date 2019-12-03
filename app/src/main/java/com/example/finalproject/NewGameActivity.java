@@ -44,5 +44,6 @@ public final class NewGameActivity extends AppCompatActivity {
         } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced) {
             Log.i(TAG, "advanced button clicked");
         }
+        startActivity(intent);
     }
 }

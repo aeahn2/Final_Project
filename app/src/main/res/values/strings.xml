@@ -15,4 +15,6 @@
     <string name="spend_time_with_friends">Spend time with Friends</string>
     <string name="do_prairielearn">Do PrairieLearn</string>
     <string name="go_to_a_party">Go to a party</string>
+    <string name="textview3">TextView</string>
+    <string name="textview4">TextView</string>
 </resources>
