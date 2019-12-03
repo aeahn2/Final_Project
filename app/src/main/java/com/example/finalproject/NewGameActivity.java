@@ -18,7 +18,7 @@ import android.widget.RadioGroup;
 public final class NewGameActivity extends AppCompatActivity {
     private static final String TAG = "NewGameActivity";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         Log.i(TAG, "NewGameActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
@@ -32,7 +32,7 @@ public final class NewGameActivity extends AppCompatActivity {
 //
         Button startGame = findViewById(R.id.startGame);
 //
-        startGame.setOnClickListener(createGameClicked());
+        startGame.setOnClickListener(unused -> createGameClicked());
 
 
 
