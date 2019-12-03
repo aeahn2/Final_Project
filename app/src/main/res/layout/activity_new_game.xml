@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/beginner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Beginner" />
+
+    <Button
+        android:id="@+id/advanced"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Advanced" />
+
+    <Button
+        android:id="@+id/moreInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="More Information" />
+
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Start Game" />
+
+</LinearLayout>
