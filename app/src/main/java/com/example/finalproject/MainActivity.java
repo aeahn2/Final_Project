@@ -24,12 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton logoButton = findViewById(R.id.logoButton);
 
-        logoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchNewGameActivity();
-            }
-        });
+        logoButton.setOnClickListener(unused -> launchNewGameActivity());
 
     }
     public void launchNewGameActivity() {

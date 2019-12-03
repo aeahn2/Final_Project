@@ -34,8 +34,6 @@ public final class NewGameActivity extends AppCompatActivity {
 //
         startGame.setOnClickListener(unused -> createGameClicked());
 
-
-
     }
 
     private void createGameClicked() {
