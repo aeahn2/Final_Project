@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    //test
-    //test 2
+    /**
+     * Represents the main screen of the app, the user just taps the screen and it will move them to
+     * new game activity.
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
