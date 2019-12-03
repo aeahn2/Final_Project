@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Final Project</string>
+    <string name="grades">Grades</string>
+    <string name="cs_ability">CS Ability</string>
+    <string name="mental_health">Mental Health</string>
+    <string name="social_life">Social Life</string>
+    <string name="age">Age</string>
+    <string name="beginner">Beginner</string>
+    <string name="textview1">TextView</string>
+    <string name="advanced">Advanced</string>
+    <string name="textview2">TextView</string>
+    <string name="start_game">Start Game</string>
+    <string name="logo">logo</string>
+    <string name="work_on_mp">Work on MP</string>
+    <string name="spend_time_with_friends">Spend time with Friends</string>
+    <string name="do_prairielearn">Do PrairieLearn</string>
+    <string name="go_to_a_party">Go to a party</string>
 </resources>

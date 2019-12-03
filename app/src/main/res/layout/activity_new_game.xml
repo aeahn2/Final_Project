@@ -3,29 +3,42 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/beginner"
+    <RadioGroup
+        android:id="@+id/gameMode"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Beginner" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/advanced"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Advanced" />
+        <RadioButton
+            android:id="@+id/beginner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/beginner" />
 
-    <Button
-        android:id="@+id/moreInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="More Information" />
+        <TextView
+            android:id="@+id/begDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview1" />
+
+        <RadioButton
+            android:id="@+id/advanced"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/advanced" />
+
+        <TextView
+            android:id="@+id/advDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview2" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/startGame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Start Game" />
+        android:text="@string/start_game" />
 
 </LinearLayout>
