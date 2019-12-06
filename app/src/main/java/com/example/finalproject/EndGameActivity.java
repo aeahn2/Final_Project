@@ -20,7 +20,8 @@ public class EndGameActivity extends AppCompatActivity {
         TextView mentalScore = findViewById(R.id.mentalScore);
         TextView socialScore = findViewById(R.id.socialScore);
 
-        TextView
+        TextView gradeFinal = findViewById(R.id.gradeFinal);
+        TextView scoreFinal = findViewById(R.id.scoreFinal);
 
         int grades = intent.getIntExtra("grades", 0);
         int ability = intent.getIntExtra("ability", 0);
@@ -31,6 +32,8 @@ public class EndGameActivity extends AppCompatActivity {
         abilityScore.setText("CS Ability: " + ability);
         mentalScore.setText("Mental Health: " + mental);
         socialScore.setText("Social Life: " + social);
+
+//        if (grades > )
 
 
     }

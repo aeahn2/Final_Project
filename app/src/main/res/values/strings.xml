@@ -17,12 +17,13 @@
     <string name="go_to_a_party">Go to a party</string>
     <string name="textview3">TextView</string>
     <string name="textview4">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
-    <string name="textview">TextView</string>
+    <string name="your_score">Your Score:</string>
+    <string name="gradescore">gradeScore</string>
+    <string name="abilityscore">abilityScore</string>
+    <string name="mentalscore">mentalScore</string>
+    <string name="socialscore">socialScore</string>
+    <string name="final_score">Final Score</string>
+    <string name="gradefinal">gradeFinal</string>
+    <string name="scorefinal">scoreFinal</string>
+    <string name="passfail">passFail</string>
 </resources>
