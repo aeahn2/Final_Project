@@ -60,34 +60,36 @@ public final class NewGameActivity extends AppCompatActivity {
         intent.putExtra("grades", 100);
         intent.putExtra("social", 0);
 
+        TextView errorMessage = findViewById(R.id.errorMessage);
+        errorMessage.setVisibility(View.GONE);
 
-        if (!(setName.isEmpty())) {
+
+        if (setName.isEmpty()) {
+            enterNameText.setTextColor(Color.RED);
+        } else {
             enterNameText.setTextColor(Color.BLACK);
             intent.putExtra("name", setName);
             Log.i(TAG, "My name is" + setName);
-            if (gameMode.getCheckedRadioButtonId() == R.id.beginner) {
-                Log.i(TAG, "beginner button pressed");
-                intent.putExtra("ability", 0);
-                intent.putExtra("mental", 50);
+        }
 
-                startActivity(intent);
+        if (gameMode.getCheckedRadioButtonId() == R.id.beginner && !(setName.isEmpty())) {
+            Log.i(TAG, "beginner button pressed");
+            intent.putExtra("ability", 0);
+            intent.putExtra("mental", 50);
 
-            } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced) {
-                Log.i(TAG, "advanced button clicked");
-                intent.putExtra("ability", 50);
-                intent.putExtra("mental", 0);
+            startActivity(intent);
 
-                startActivity(intent);
+        } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.isEmpty())) {
+            Log.i(TAG, "advanced button clicked");
+            intent.putExtra("ability", 50);
+            intent.putExtra("mental", 0);
 
-            } else {
-                Log.i(TAG, "no version selected");
-                TextView errorMessage = findViewById(R.id.errorMessage);
-                errorMessage.setVisibility(View.VISIBLE);
-                errorMessage.setText("Please select a difficulty level");
-            }
-        } else {
-            enterNameText.setTextColor(Color.RED);
+            startActivity(intent);
 
+        } else if (gameMode.getCheckedRadioButtonId() != R.id.beginner && gameMode.getCheckedRadioButtonId() != R.id.advanced ){
+            Log.i(TAG, "no version selected");
+            errorMessage.setVisibility(View.VISIBLE);
+            errorMessage.setText("Please select a difficulty level");
         }
 
     }
