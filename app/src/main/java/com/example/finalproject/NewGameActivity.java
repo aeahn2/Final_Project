@@ -64,7 +64,7 @@ public final class NewGameActivity extends AppCompatActivity {
         errorMessage.setVisibility(View.GONE);
 
 
-        if (setName.isEmpty()) {
+        if (setName.trim().isEmpty()) {
             enterNameText.setTextColor(Color.RED);
         } else {
             enterNameText.setTextColor(Color.BLACK);
@@ -72,14 +72,14 @@ public final class NewGameActivity extends AppCompatActivity {
             Log.i(TAG, "My name is" + setName);
         }
 
-        if (gameMode.getCheckedRadioButtonId() == R.id.beginner && !(setName.isEmpty())) {
+        if (gameMode.getCheckedRadioButtonId() == R.id.beginner && !(setName.trim().isEmpty())) {
             Log.i(TAG, "beginner button pressed");
             intent.putExtra("ability", 0);
             intent.putExtra("mental", 50);
 
             startActivity(intent);
 
-        } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.isEmpty())) {
+        } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.trim().isEmpty())) {
             Log.i(TAG, "advanced button clicked");
             intent.putExtra("ability", 50);
             intent.putExtra("mental", 0);

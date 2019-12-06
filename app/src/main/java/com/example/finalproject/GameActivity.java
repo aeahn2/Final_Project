@@ -65,12 +65,12 @@ public final class GameActivity extends AppCompatActivity {
 
 //    Work on MP (Mental Health -6, Grades +8, Social Life -10, CS Ability +6)
     public void workMPMethod() {
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
         if (date < 64) {
-            ProgressBar gradesBar = findViewById(R.id.gradesBar);
-            ProgressBar abilityBar = findViewById(R.id.abilityBar);
-            ProgressBar mentalBar = findViewById(R.id.mentalBar);
-            ProgressBar socialBar = findViewById(R.id.socialBar);
-            TextView currentDate = findViewById(R.id.date);
 
             gradesBar.incrementProgressBy(8);
             abilityBar.incrementProgressBy(6);
@@ -89,13 +89,13 @@ public final class GameActivity extends AppCompatActivity {
 
     //    Spend time with friends (Mental Health +4, Grades -2, Social Life +3, CS Ability -2)
     public void friendsMethod() {
-        if (date < 64) {
-            ProgressBar gradesBar = findViewById(R.id.gradesBar);
-            ProgressBar abilityBar = findViewById(R.id.abilityBar);
-            ProgressBar mentalBar = findViewById(R.id.mentalBar);
-            ProgressBar socialBar = findViewById(R.id.socialBar);
-            TextView currentDate = findViewById(R.id.date);
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
 
+        if (date < 64) {
             gradesBar.incrementProgressBy(-2);
             abilityBar.incrementProgressBy(-2);
             mentalBar.incrementProgressBy(+4);
@@ -105,6 +105,11 @@ public final class GameActivity extends AppCompatActivity {
             currentDate.setText("Day " + Integer.toString(date) + " of 64");
         } else {
             Intent endIntent = new Intent(this, EndGameActivity.class);
+            endIntent.putExtra("grades", gradesBar.getProgress());
+            endIntent.putExtra("ability", abilityBar.getProgress());
+            endIntent.putExtra("mental", mentalBar.getProgress());
+            endIntent.putExtra("social", socialBar.getProgress());
+
             startActivity(endIntent);
         }
 
@@ -112,13 +117,13 @@ public final class GameActivity extends AppCompatActivity {
 
     //    Do PrairieLearn (Mental Health 0, Grades +2, Social Life 0, CS Ability +2)
     public void prairieLearnMethod() {
-        if (date < 64) {
-            ProgressBar gradesBar = findViewById(R.id.gradesBar);
-            ProgressBar abilityBar = findViewById(R.id.abilityBar);
-            ProgressBar mentalBar = findViewById(R.id.mentalBar);
-            ProgressBar socialBar = findViewById(R.id.socialBar);
-            TextView currentDate = findViewById(R.id.date);
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
 
+        if (date < 64) {
             gradesBar.incrementProgressBy(2);
             abilityBar.incrementProgressBy(2);
             mentalBar.incrementProgressBy(-1);
@@ -128,6 +133,11 @@ public final class GameActivity extends AppCompatActivity {
             currentDate.setText("Day " + Integer.toString(date) + " of 64");
         } else {
             Intent endIntent = new Intent(this, EndGameActivity.class);
+            endIntent.putExtra("grades", gradesBar.getProgress());
+            endIntent.putExtra("ability", abilityBar.getProgress());
+            endIntent.putExtra("mental", mentalBar.getProgress());
+            endIntent.putExtra("social", socialBar.getProgress());
+
             startActivity(endIntent);
         }
 
@@ -135,13 +145,13 @@ public final class GameActivity extends AppCompatActivity {
 
     //    Go to party (Mental Health +6, Grades -6, Social Life +6, CS Ability -6)
     public void partyMethod() {
-        if (date < 64) {
-            ProgressBar gradesBar = findViewById(R.id.gradesBar);
-            ProgressBar abilityBar = findViewById(R.id.abilityBar);
-            ProgressBar mentalBar = findViewById(R.id.mentalBar);
-            ProgressBar socialBar = findViewById(R.id.socialBar);
-            TextView currentDate = findViewById(R.id.date);
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
 
+        if (date < 64) {
             gradesBar.incrementProgressBy(-6);
             abilityBar.incrementProgressBy(-6);
             mentalBar.incrementProgressBy(6);
@@ -151,6 +161,11 @@ public final class GameActivity extends AppCompatActivity {
             currentDate.setText("Day " + Integer.toString(date) + " of 64");
         } else {
             Intent endIntent = new Intent(this, EndGameActivity.class);
+            endIntent.putExtra("grades", gradesBar.getProgress());
+            endIntent.putExtra("ability", abilityBar.getProgress());
+            endIntent.putExtra("mental", mentalBar.getProgress());
+            endIntent.putExtra("social", socialBar.getProgress());
+
             startActivity(endIntent);
         }
 

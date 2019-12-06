@@ -3,4 +3,59 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/indivScores"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:text="@string/textview" />
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="190dp"
+        android:gravity="center|right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gradeScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+
+        <TextView
+            android:id="@+id/abilityScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+
+        <TextView
+            android:id="@+id/mentalScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+
+        <TextView
+            android:id="@+id/socialScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/gradeFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+
+        <TextView
+            android:id="@+id/scoreFinal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textview" />
+    </LinearLayout>
 </LinearLayout>
