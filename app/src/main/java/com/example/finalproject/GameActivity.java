@@ -2,13 +2,11 @@ package com.example.finalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup;
+import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
@@ -16,52 +14,126 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 
 public final class GameActivity extends AppCompatActivity {
-    int date = 0;
-    ProgressBar gradesBar = findViewById(R.id.gradesBar);
-    ProgressBar abilityBar = findViewById(R.id.abilityBar);
-    ProgressBar mentalBar = findViewById(R.id.mentalBar);
-    ProgressBar socialBar = findViewById(R.id.socialbar);
-
+    private static final String TAG = "GameActivity";
+    private static int date = 0;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        Intent intent = getIntent();
 
-    }
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
 
-    // bring up initial stats
+        String name = intent.getStringExtra("name");
+        TextView playerName = findViewById(R.id.playerName);
 
-    private void updateStats() {
+        playerName.setText(name);
+        Log.i(TAG, name);
+
+        currentDate.setText(date);
+
+        int grades = intent.getIntExtra("grades", 100);
+        int ability = intent.getIntExtra("ability", 0);
+        int mental = intent.getIntExtra("mental", 50);
+        int social = intent.getIntExtra("social", 0);
+
+        gradesBar.setProgress(grades);
+        abilityBar.setProgress(ability);
+        mentalBar.setProgress(mental);
+        socialBar.setProgress(social);
+
+
         Button workMP = findViewById(R.id.workMP);
         Button friends = findViewById(R.id.friends);
         Button prairieLearn = findViewById(R.id.prairieLearn);
         Button party = findViewById(R.id.party);
-        Intent intent = new Intent(this, GameActivity.class);
 
-        workMP.setOnClickListener(unused -> workMPMethod());
-        friends.setOnClickListener(unused -> friendsMethod());
-        prairieLearn.setOnClickListener(unused -> prairieLearnMethod());
-        party.setOnClickListener(unused -> partyMethod());
+        if (date < 64) {
+            workMP.setOnClickListener(unused -> workMPMethod());
+            friends.setOnClickListener(unused -> friendsMethod());
+            prairieLearn.setOnClickListener(unused -> prairieLearnMethod());
+            party.setOnClickListener(unused -> partyMethod());
+        }
 
 
     }
+
+
+//    Work on MP (Mental Health -6, Grades +8, Social Life -10, CS Ability +6)
+//    Do PrairieLearn (Mental Health 0, Grades +2, Social Life 0, CS Ability +2)
+//    Spend time with friends (Mental Health +4, Grades -2, Social Life +3, CS Ability -2)
+//    Go to party (Mental Health +6, Grades -6, Social Life +6, CS Ability -6)
+
+
     public void workMPMethod() {
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
+
+        gradesBar.incrementProgressBy(8);
+        abilityBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(-6);
+        socialBar.incrementProgressBy(-10);
+
         date++;
-        gradesBar.setProgress(3);
+        currentDate.setText(date);
 
     }
 
     public void friendsMethod() {
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
+
+        gradesBar.incrementProgressBy(8);
+        abilityBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(-6);
+        socialBar.incrementProgressBy(-10);
+
         date++;
+        currentDate.setText(date);
     }
 
     public void prairieLearnMethod() {
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
+
+        gradesBar.incrementProgressBy(8);
+        abilityBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(-6);
+        socialBar.incrementProgressBy(-10);
+
         date++;
+        currentDate.setText(date);
+
     }
 
     public void partyMethod() {
+        ProgressBar gradesBar = findViewById(R.id.gradesBar);
+        ProgressBar abilityBar = findViewById(R.id.abilityBar);
+        ProgressBar mentalBar = findViewById(R.id.mentalBar);
+        ProgressBar socialBar = findViewById(R.id.socialBar);
+        TextView currentDate = findViewById(R.id.date);
+
+        gradesBar.incrementProgressBy(8);
+        abilityBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(-6);
+        socialBar.incrementProgressBy(-10);
+
         date++;
+        currentDate.setText(date);
     }
 
 }

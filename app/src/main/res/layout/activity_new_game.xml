@@ -17,7 +17,7 @@
         <TextView
             android:id="@+id/begDes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:text="@string/textview1" />
 
         <RadioButton
@@ -29,10 +29,22 @@
         <TextView
             android:id="@+id/advDes"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
             android:text="@string/textview2" />
 
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/enterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/enterNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/startGame"
@@ -40,5 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/start_game" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textview"
+        android:textColor="#F44336" />
 
 </LinearLayout>
