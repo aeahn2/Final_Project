@@ -35,7 +35,7 @@ public final class GameActivity extends AppCompatActivity {
         playerName.setText(name);
         Log.i(TAG, name);
 
-        currentDate.setText(date);
+        currentDate.setText(Integer.toString(date));
 
         int grades = intent.getIntExtra("grades", 100);
         int ability = intent.getIntExtra("ability", 0);
@@ -83,7 +83,7 @@ public final class GameActivity extends AppCompatActivity {
         socialBar.incrementProgressBy(-10);
 
         date++;
-        currentDate.setText(date);
+        currentDate.setText(Integer.toString(date));
 
     }
 
@@ -100,7 +100,7 @@ public final class GameActivity extends AppCompatActivity {
         socialBar.incrementProgressBy(-10);
 
         date++;
-        currentDate.setText(date);
+        currentDate.setText(Integer.toString(date));
     }
 
     public void prairieLearnMethod() {
@@ -116,7 +116,7 @@ public final class GameActivity extends AppCompatActivity {
         socialBar.incrementProgressBy(-10);
 
         date++;
-        currentDate.setText(date);
+        currentDate.setText(Integer.toString(date));
 
     }
 
@@ -133,7 +133,7 @@ public final class GameActivity extends AppCompatActivity {
         socialBar.incrementProgressBy(-10);
 
         date++;
-        currentDate.setText(date);
+        currentDate.setText(Integer.toString(date));
     }
 
 }

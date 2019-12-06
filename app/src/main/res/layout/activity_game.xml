@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="bottom"
+    android:gravity="top"
     android:orientation="vertical">
 
     <TextView
@@ -26,7 +26,7 @@
     <EditText
         android:id="@+id/activityLog"
         android:layout_width="match_parent"
-        android:layout_height="417dp"
+        android:layout_height="379dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
