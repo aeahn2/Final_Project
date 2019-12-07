@@ -23,9 +23,9 @@ public final class NewGameActivity extends AppCompatActivity {
     private static final String TAG = "NewGameActivity";
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
-        Log.i(TAG, "NewGameActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game);
+        Log.i(TAG, "NewGameActivity");
 
         TextView errorMessage = findViewById(R.id.errorMessage);
         errorMessage.setVisibility(View.GONE);

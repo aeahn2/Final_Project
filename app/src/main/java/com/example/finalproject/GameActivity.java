@@ -81,7 +81,14 @@ public final class GameActivity extends AppCompatActivity {
             currentDate.setText("Day " + Integer.toString(date) + " of 64");
         } else {
             Intent endIntent = new Intent(this, EndGameActivity.class);
-            startActivity(endIntent);
+            endIntent.putExtra("grades", gradesBar.getProgress());
+            endIntent.putExtra("ability", abilityBar.getProgress());
+            endIntent.putExtra("mental", mentalBar.getProgress());
+            endIntent.putExtra("social", socialBar.getProgress());
+
+            Log.i(TAG, "last day");
+
+//            startActivity(endIntent);
         }
 
     }
@@ -110,7 +117,10 @@ public final class GameActivity extends AppCompatActivity {
             endIntent.putExtra("mental", mentalBar.getProgress());
             endIntent.putExtra("social", socialBar.getProgress());
 
+            Log.i(TAG, "last day");
+
             startActivity(endIntent);
+//            finish();
         }
 
     }
@@ -138,7 +148,9 @@ public final class GameActivity extends AppCompatActivity {
             endIntent.putExtra("mental", mentalBar.getProgress());
             endIntent.putExtra("social", socialBar.getProgress());
 
-            startActivity(endIntent);
+            Log.i(TAG, "last day");
+
+//            startActivity(endIntent);
         }
 
     }
@@ -166,7 +178,9 @@ public final class GameActivity extends AppCompatActivity {
             endIntent.putExtra("mental", mentalBar.getProgress());
             endIntent.putExtra("social", socialBar.getProgress());
 
-            startActivity(endIntent);
+            Log.i(TAG, "last day");
+
+//            startActivity(endIntent);
         }
 
     }

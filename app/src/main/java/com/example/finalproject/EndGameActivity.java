@@ -2,11 +2,12 @@ package com.example.finalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EndGameActivity extends AppCompatActivity {
+public final class EndGameActivity extends AppCompatActivity {
     private static final String TAG = "EndGameActivity";
 
     @Override
@@ -14,6 +15,9 @@ public class EndGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end_game);
         Intent intent = getIntent();
+
+        Log.i(TAG, "EndGameActivity");
+
 
         TextView gradeScore = findViewById(R.id.gradeScore);
         TextView abilityScore = findViewById(R.id.abilityScore);
