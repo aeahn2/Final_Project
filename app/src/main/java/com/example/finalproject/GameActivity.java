@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public final class GameActivity extends AppCompatActivity {
     private static final String TAG = "GameActivity";
     private static int date = 0;
+    private String[] weekArray = new String[]{"Mon", "Wed", "Fri", "Sun"};
+    private static int weekCounter = 1;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public final class GameActivity extends AppCompatActivity {
         playerName.setText(name);
         Log.i(TAG, name);
 
-        currentDate.setText("Day " + Integer.toString(date) + " of 64");
+        currentDate.setText(dateDisplay());
 
         int grades = intent.getIntExtra("grades", 100);
         int ability = intent.getIntExtra("ability", 0);
@@ -70,28 +72,14 @@ public final class GameActivity extends AppCompatActivity {
         ProgressBar mentalBar = findViewById(R.id.mentalBar);
         ProgressBar socialBar = findViewById(R.id.socialBar);
         TextView currentDate = findViewById(R.id.date);
-        if (date < 64) {
 
-            gradesBar.incrementProgressBy(8);
-            abilityBar.incrementProgressBy(6);
-            mentalBar.incrementProgressBy(-6);
-            socialBar.incrementProgressBy(-10);
+        gradesBar.incrementProgressBy(8);
+        abilityBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(-6);
+        socialBar.incrementProgressBy(-10);
 
-            date++;
-            currentDate.setText("Day " + Integer.toString(date) + " of 64");
-        } else {
-            Intent endIntent = new Intent(this, EndGameActivity.class);
-            endIntent.putExtra("grades", gradesBar.getProgress());
-            endIntent.putExtra("ability", abilityBar.getProgress());
-            endIntent.putExtra("mental", mentalBar.getProgress());
-            endIntent.putExtra("social", socialBar.getProgress());
-
-            Log.i(TAG, "last day");
-
-            startActivity(endIntent);
-            finish();
-
-        }
+        date++;
+        currentDate.setText(dateDisplay());
 
     }
 
@@ -104,26 +92,15 @@ public final class GameActivity extends AppCompatActivity {
         ProgressBar socialBar = findViewById(R.id.socialBar);
         TextView currentDate = findViewById(R.id.date);
 
-        if (date < 64) {
-            gradesBar.incrementProgressBy(-2);
-            abilityBar.incrementProgressBy(-2);
-            mentalBar.incrementProgressBy(+4);
-            socialBar.incrementProgressBy(+3);
 
-            date++;
-            currentDate.setText("Day " + Integer.toString(date) + " of 64");
-        } else {
-            Intent endIntent = new Intent(this, EndGameActivity.class);
-            endIntent.putExtra("grades", gradesBar.getProgress());
-            endIntent.putExtra("ability", abilityBar.getProgress());
-            endIntent.putExtra("mental", mentalBar.getProgress());
-            endIntent.putExtra("social", socialBar.getProgress());
+        gradesBar.incrementProgressBy(-2);
+        abilityBar.incrementProgressBy(-2);
+        mentalBar.incrementProgressBy(+4);
+        socialBar.incrementProgressBy(+3);
 
-            Log.i(TAG, "last day");
+        date++;
+        currentDate.setText(dateDisplay());
 
-            startActivity(endIntent);
-            finish();
-        }
 
     }
 
@@ -135,27 +112,13 @@ public final class GameActivity extends AppCompatActivity {
         ProgressBar socialBar = findViewById(R.id.socialBar);
         TextView currentDate = findViewById(R.id.date);
 
-        if (date < 64) {
-            gradesBar.incrementProgressBy(2);
-            abilityBar.incrementProgressBy(2);
-            mentalBar.incrementProgressBy(-1);
-            socialBar.incrementProgressBy(-2);
+        gradesBar.incrementProgressBy(2);
+        abilityBar.incrementProgressBy(2);
+        mentalBar.incrementProgressBy(-1);
+        socialBar.incrementProgressBy(-2);
 
-            date++;
-            currentDate.setText("Day " + Integer.toString(date) + " of 64");
-        } else {
-            Intent endIntent = new Intent(this, EndGameActivity.class);
-            endIntent.putExtra("grades", gradesBar.getProgress());
-            endIntent.putExtra("ability", abilityBar.getProgress());
-            endIntent.putExtra("mental", mentalBar.getProgress());
-            endIntent.putExtra("social", socialBar.getProgress());
-
-            Log.i(TAG, "last day");
-
-            startActivity(endIntent);
-            finish();
-
-        }
+        date++;
+        currentDate.setText(dateDisplay());
 
     }
 
@@ -167,15 +130,27 @@ public final class GameActivity extends AppCompatActivity {
         ProgressBar socialBar = findViewById(R.id.socialBar);
         TextView currentDate = findViewById(R.id.date);
 
-        if (date < 64) {
-            gradesBar.incrementProgressBy(-6);
-            abilityBar.incrementProgressBy(-6);
-            mentalBar.incrementProgressBy(6);
-            socialBar.incrementProgressBy(6);
+        gradesBar.incrementProgressBy(-6);
+        abilityBar.incrementProgressBy(-6);
+        mentalBar.incrementProgressBy(6);
+        socialBar.incrementProgressBy(6);
 
-            date++;
-            currentDate.setText("Day " + Integer.toString(date) + " of 64");
-        } else {
+        date++;
+        currentDate.setText(dateDisplay());
+
+    }
+
+    public String dateDisplay() {
+        if (date == 4) {
+            date = 0;
+            weekCounter++;
+        }
+        if (weekCounter > 16) {
+            ProgressBar gradesBar = findViewById(R.id.gradesBar);
+            ProgressBar abilityBar = findViewById(R.id.abilityBar);
+            ProgressBar mentalBar = findViewById(R.id.mentalBar);
+            ProgressBar socialBar = findViewById(R.id.socialBar);
+
             Intent endIntent = new Intent(this, EndGameActivity.class);
             endIntent.putExtra("grades", gradesBar.getProgress());
             endIntent.putExtra("ability", abilityBar.getProgress());
@@ -186,9 +161,8 @@ public final class GameActivity extends AppCompatActivity {
 
             startActivity(endIntent);
             finish();
-
         }
-
+        return ("Week " + weekCounter + ": " + weekArray[date % 4]);
     }
 
 }

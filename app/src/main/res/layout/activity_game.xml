@@ -27,6 +27,8 @@
         android:id="@+id/activityLog"
         android:layout_width="match_parent"
         android:layout_height="347dp"
+        android:cursorVisible="false"
+        android:editable="false"
         android:ems="10"
         android:inputType="textPersonName" />
 
