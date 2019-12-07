@@ -88,7 +88,9 @@ public final class GameActivity extends AppCompatActivity {
 
             Log.i(TAG, "last day");
 
-//            startActivity(endIntent);
+            startActivity(endIntent);
+            finish();
+
         }
 
     }
@@ -120,7 +122,7 @@ public final class GameActivity extends AppCompatActivity {
             Log.i(TAG, "last day");
 
             startActivity(endIntent);
-//            finish();
+            finish();
         }
 
     }
@@ -150,7 +152,9 @@ public final class GameActivity extends AppCompatActivity {
 
             Log.i(TAG, "last day");
 
-//            startActivity(endIntent);
+            startActivity(endIntent);
+            finish();
+
         }
 
     }
@@ -180,7 +184,9 @@ public final class GameActivity extends AppCompatActivity {
 
             Log.i(TAG, "last day");
 
-//            startActivity(endIntent);
+            startActivity(endIntent);
+            finish();
+
         }
 
     }

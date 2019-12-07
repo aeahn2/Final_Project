@@ -32,12 +32,27 @@ public final class EndGameActivity extends AppCompatActivity {
         int mental = intent.getIntExtra("mental", 0);
         int social = intent.getIntExtra("social", 0);
 
-        gradeScore.setText("Grade: " + grades);
+        String gradeScoreString = "Grade: " + grades;
+        gradeScore.setText(gradeScoreString);
         abilityScore.setText("CS Ability: " + ability);
         mentalScore.setText("Mental Health: " + mental);
         socialScore.setText("Social Life: " + social);
 
-//        if (grades > )
+
+        if (grades >= 90) {
+            gradeFinal.setText("Class Grade: A");
+        } else if (grades >= 80) {
+            gradeFinal.setText("Class Grade: B");
+        } else if (grades >= 70) {
+            gradeFinal.setText("Class Grade: C");
+        } else if (grades >= 60) {
+            gradeFinal.setText("Class Grade: D");
+        } else {
+            gradeFinal.setText("Class Grade: F");
+        }
+
+        double score = (grades + ability + mental + social) / 4.0;
+        scoreFinal.setText("Overall Score: " + Double.toString(score));
 
 
     }

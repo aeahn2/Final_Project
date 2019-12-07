@@ -25,26 +25,30 @@
         <TextView
             android:id="@+id/gradeScore"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/gradescore" />
+            android:layout_height="40dp"
+            android:text="@string/gradescore"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/abilityScore"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/abilityscore" />
+            android:layout_height="40dp"
+            android:text="@string/abilityscore"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/mentalScore"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mentalscore" />
+            android:layout_height="40dp"
+            android:text="@string/mentalscore"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/socialScore"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/socialscore" />
+            android:layout_height="40dp"
+            android:text="@string/socialscore"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -72,14 +76,17 @@
         <TextView
             android:id="@+id/gradeFinal"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:text="@string/gradefinal" />
+            android:layout_height="88dp"
+            android:gravity="bottom"
+            android:text="@string/gradefinal"
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/scoreFinal"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="@string/scorefinal" />
+            android:layout_height="64dp"
+            android:text="@string/scorefinal"
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/passFail"
