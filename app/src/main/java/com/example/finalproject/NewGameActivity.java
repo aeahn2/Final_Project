@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import java.util.Random;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,6 +21,11 @@ import android.widget.TextView;
  */
 
 public final class NewGameActivity extends AppCompatActivity {
+    private Random a = new Random();
+    private Random m = new Random();
+    private Random g = new Random();
+    private Random s = new Random();
+
     private static final String TAG = "NewGameActivity";
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -50,15 +56,13 @@ public final class NewGameActivity extends AppCompatActivity {
         startGame.setOnClickListener(unused -> createGameClicked());
 
     }
-
+    //int result = r.nextInt(high-low) + low;
     private void createGameClicked() {
         RadioGroup gameMode = findViewById(R.id.gameMode);
         Intent intent = new Intent(this, GameActivity.class);
         EditText enterName = findViewById(R.id.enterName);
         String setName = enterName.getText().toString();
         TextView enterNameText = findViewById(R.id.enterNameText);
-        intent.putExtra("grades", 100);
-        intent.putExtra("social", 0);
 
         TextView errorMessage = findViewById(R.id.errorMessage);
         errorMessage.setVisibility(View.GONE);
@@ -74,15 +78,19 @@ public final class NewGameActivity extends AppCompatActivity {
 
         if (gameMode.getCheckedRadioButtonId() == R.id.beginner && !(setName.trim().isEmpty())) {
             Log.i(TAG, "beginner button pressed");
-            intent.putExtra("ability", 0);
-            intent.putExtra("mental", 50);
+            intent.putExtra("ability", a.nextInt(30));
+            intent.putExtra("mental", m.nextInt(30) + 70);
+            intent.putExtra("grades", g.nextInt(20) + 40);
+            intent.putExtra("social", s.nextInt(20) + 40);
 
             startActivity(intent);
 
         } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.trim().isEmpty())) {
             Log.i(TAG, "advanced button clicked");
-            intent.putExtra("ability", 50);
-            intent.putExtra("mental", 0);
+            intent.putExtra("ability", a.nextInt(30) + 70);
+            intent.putExtra("mental", m.nextInt(20) + 10);
+            intent.putExtra("grades", g.nextInt(20) + 80);
+            intent.putExtra("social", s.nextInt(20));
 
             startActivity(intent);
 
