@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public final class GameActivity extends AppCompatActivity {
     private static int date = 0;
     private String[] weekArray = new String[]{"Mon", "Wed", "Fri", "Sun"};
     private static int weekCounter = 1;
+    private StringBuilder activityLogText = new StringBuilder();
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -38,6 +40,10 @@ public final class GameActivity extends AppCompatActivity {
         Log.i(TAG, name);
 
         currentDate.setText(dateDisplay());
+
+        TextView activityDisplay = findViewById(R.id.activityDisplay);
+        activityLogText.append("Welcome to [enter game name later] \n");
+        activityDisplay.setText(activityLogText);
 
         int grades = intent.getIntExtra("grades", 100);
         int ability = intent.getIntExtra("ability", 0);
@@ -78,6 +84,10 @@ public final class GameActivity extends AppCompatActivity {
         mentalBar.incrementProgressBy(-6);
         socialBar.incrementProgressBy(-10);
 
+        TextView activityDisplay = findViewById(R.id.activityDisplay);
+        activityLogText.append("You spent hours toiling away on the MP. \n");
+        activityDisplay.setText(activityLogText);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -98,6 +108,10 @@ public final class GameActivity extends AppCompatActivity {
         mentalBar.incrementProgressBy(+4);
         socialBar.incrementProgressBy(+3);
 
+        TextView activityDisplay = findViewById(R.id.activityDisplay);
+        activityLogText.append("You spent quality time with your friends. \n");
+        activityDisplay.setText(activityLogText);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -117,6 +131,10 @@ public final class GameActivity extends AppCompatActivity {
         mentalBar.incrementProgressBy(-1);
         socialBar.incrementProgressBy(-2);
 
+        TextView activityDisplay = findViewById(R.id.activityDisplay);
+        activityLogText.append("You wasted an hour on daily homework. \n");
+        activityDisplay.setText(activityLogText);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -134,6 +152,10 @@ public final class GameActivity extends AppCompatActivity {
         abilityBar.incrementProgressBy(-6);
         mentalBar.incrementProgressBy(6);
         socialBar.incrementProgressBy(6);
+
+        TextView activityDisplay = findViewById(R.id.activityDisplay);
+        activityLogText.append("You got absolutely hammered at a party and ascended into a state or Nirvana. \n");
+        activityDisplay.setText(activityLogText);
 
         date++;
         currentDate.setText(dateDisplay());
