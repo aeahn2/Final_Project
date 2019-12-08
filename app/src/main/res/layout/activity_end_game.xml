@@ -76,7 +76,7 @@
         <TextView
             android:id="@+id/gradeFinal"
             android:layout_width="match_parent"
-            android:layout_height="88dp"
+            android:layout_height="60dp"
             android:gravity="bottom"
             android:text="@string/gradefinal"
             android:textSize="35sp" />
@@ -95,6 +95,15 @@
             android:gravity="center"
             android:text="@string/passfail"
             android:textSize="40sp" />
+
+        <Button
+            android:id="@+id/playAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#F44336"
+            android:text="Play Again"
+            android:textColor="#050505" />
 
     </LinearLayout>
 

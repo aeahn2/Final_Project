@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,6 +78,15 @@ public final class EndGameActivity extends AppCompatActivity {
             passFail.setTextColor(Color.RED);
         }
 
+        Button playAgain = findViewById(R.id.playAgain);
+        playAgain.setOnClickListener(unused -> launchNewGameActivity());
+
+    }
+
+    public void launchNewGameActivity() {
+        Log.i(TAG, "Go to NewGameActivity");
+        Intent intent = new Intent(this, NewGameActivity.class);
+        startActivity(intent);
 
     }
 }

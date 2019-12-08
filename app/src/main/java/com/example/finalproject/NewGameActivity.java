@@ -85,6 +85,7 @@ public final class NewGameActivity extends AppCompatActivity {
             intent.putExtra("social", s.nextInt(20) + 40);
 
             startActivity(intent);
+            finish();
 
         } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.trim().isEmpty())) {
             Log.i(TAG, "advanced button clicked");
@@ -95,6 +96,7 @@ public final class NewGameActivity extends AppCompatActivity {
             intent.putExtra("social", s.nextInt(20));
 
             startActivity(intent);
+            finish();
 
         } else if (gameMode.getCheckedRadioButtonId() != R.id.beginner && gameMode.getCheckedRadioButtonId() != R.id.advanced ){
             Log.i(TAG, "no version selected");

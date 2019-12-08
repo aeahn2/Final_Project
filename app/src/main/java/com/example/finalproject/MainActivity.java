@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void launchNewGameActivity() {
-        Log.i(TAG, "Go to MainActivity");
+        Log.i(TAG, "Go to NewGameActivity");
         Intent intent = new Intent(this, NewGameActivity.class);
         startActivity(intent);
 
