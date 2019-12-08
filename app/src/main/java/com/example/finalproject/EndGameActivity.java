@@ -61,7 +61,7 @@ public final class EndGameActivity extends AppCompatActivity {
         scoreFinal.setText("Overall Score: " + Double.toString(score));
         if (score >= 80) {
             scoreFinal.setTextColor(Color.GREEN);
-        } else if (grades >= 70) {
+        } else if (score >= 70) {
             scoreFinal.setTextColor(Color.parseColor("#F5CE09"));
         } else {
             scoreFinal.setTextColor(Color.RED);

@@ -78,6 +78,7 @@ public final class NewGameActivity extends AppCompatActivity {
 
         if (gameMode.getCheckedRadioButtonId() == R.id.beginner && !(setName.trim().isEmpty())) {
             Log.i(TAG, "beginner button pressed");
+            intent.putExtra("mode", "Beginner");
             intent.putExtra("ability", a.nextInt(30));
             intent.putExtra("mental", m.nextInt(30) + 70);
             intent.putExtra("grades", g.nextInt(20) + 40);
@@ -87,6 +88,7 @@ public final class NewGameActivity extends AppCompatActivity {
 
         } else if (gameMode.getCheckedRadioButtonId() == R.id.advanced && !(setName.trim().isEmpty())) {
             Log.i(TAG, "advanced button clicked");
+            intent.putExtra("mode", "Advanced");
             intent.putExtra("ability", a.nextInt(30) + 70);
             intent.putExtra("mental", m.nextInt(20) + 10);
             intent.putExtra("grades", g.nextInt(20) + 80);
