@@ -29,6 +29,9 @@ public final class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         Intent intent = getIntent();
 
+        date = 0;
+        weekCounter = 1;
+
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
         ProgressBar mentalBar = findViewById(R.id.mentalBar);
