@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -41,18 +42,40 @@ public final class EndGameActivity extends AppCompatActivity {
 
         if (grades >= 90) {
             gradeFinal.setText("Class Grade: A");
+            gradeFinal.setTextColor(Color.GREEN);
         } else if (grades >= 80) {
             gradeFinal.setText("Class Grade: B");
+            gradeFinal.setTextColor(Color.GREEN);
         } else if (grades >= 70) {
             gradeFinal.setText("Class Grade: C");
+            gradeFinal.setTextColor(Color.parseColor("#F5CE09"));
         } else if (grades >= 60) {
             gradeFinal.setText("Class Grade: D");
+            gradeFinal.setTextColor(Color.RED);
         } else {
             gradeFinal.setText("Class Grade: F");
+            gradeFinal.setTextColor(Color.RED);
         }
 
         double score = (grades + ability + mental + social) / 4.0;
         scoreFinal.setText("Overall Score: " + Double.toString(score));
+        if (score >= 80) {
+            scoreFinal.setTextColor(Color.GREEN);
+        } else if (grades >= 70) {
+            scoreFinal.setTextColor(Color.parseColor("#F5CE09"));
+        } else {
+            scoreFinal.setTextColor(Color.RED);
+        }
+
+        TextView passFail = findViewById(R.id.passFail);
+
+        if (grades >= 70 && score >= 70) {
+            passFail.setText("PASSED");
+            passFail.setTextColor(Color.GREEN);
+        } else {
+            passFail.setText("FAILED");
+            passFail.setTextColor(Color.RED);
+        }
 
 
     }
