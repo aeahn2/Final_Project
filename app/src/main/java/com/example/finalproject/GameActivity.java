@@ -41,6 +41,9 @@ public final class GameActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
         TextView playerName = findViewById(R.id.playerName);
 
+        TextView playerMode = findViewById(R.id.playerMode);
+        playerMode.setText(intent.getCharSequenceExtra("mode"));
+
         playerName.setText(name);
         Log.i(TAG, name);
 
@@ -76,7 +79,7 @@ public final class GameActivity extends AppCompatActivity {
     }
 
 
-//    Work on MP (Mental Health -6, Grades +8, Social Life -10, CS Ability +6)
+//    Work on MP (Mental Health -6, Grades +8, Social Life -5, CS Ability +6)
     public void workMPMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -87,7 +90,7 @@ public final class GameActivity extends AppCompatActivity {
         gradesBar.incrementProgressBy(8);
         abilityBar.incrementProgressBy(6);
         mentalBar.incrementProgressBy(-6);
-        socialBar.incrementProgressBy(-10);
+        socialBar.incrementProgressBy(-5);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
         activityLogText.append("You spent hours toiling away on the MP. \n");
@@ -108,7 +111,7 @@ public final class GameActivity extends AppCompatActivity {
     }
 
 
-    //    Spend time with friends (Mental Health +4, Grades -2, Social Life +3, CS Ability -2)
+    //    Spend time with friends (Mental Health +4, Grades 0, Social Life +3, CS Ability -1)
     public void friendsMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -117,8 +120,8 @@ public final class GameActivity extends AppCompatActivity {
         TextView currentDate = findViewById(R.id.date);
 
 
-        gradesBar.incrementProgressBy(-2);
-        abilityBar.incrementProgressBy(-2);
+        gradesBar.incrementProgressBy(0);
+        abilityBar.incrementProgressBy(-1);
         mentalBar.incrementProgressBy(+4);
         socialBar.incrementProgressBy(+3);
 
@@ -141,7 +144,7 @@ public final class GameActivity extends AppCompatActivity {
 
     }
 
-    //    Do PrairieLearn (Mental Health 0, Grades +2, Social Life 0, CS Ability +2)
+    //    Do PrairieLearn (Mental Health -1, Grades +3, Social Life 0, CS Ability +3)
     public void prairieLearnMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -149,10 +152,10 @@ public final class GameActivity extends AppCompatActivity {
         ProgressBar socialBar = findViewById(R.id.socialBar);
         TextView currentDate = findViewById(R.id.date);
 
-        gradesBar.incrementProgressBy(2);
-        abilityBar.incrementProgressBy(2);
+        gradesBar.incrementProgressBy(3);
+        abilityBar.incrementProgressBy(3);
         mentalBar.incrementProgressBy(-1);
-        socialBar.incrementProgressBy(-2);
+        socialBar.incrementProgressBy(0);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
         activityLogText.append("You wasted an hour on daily homework. \n");
@@ -172,7 +175,7 @@ public final class GameActivity extends AppCompatActivity {
 
     }
 
-    //    Go to party (Mental Health +6, Grades -6, Social Life +6, CS Ability -6)
+    //    Go to party (Mental Health +6, Grades -6, Social Life +8, CS Ability -5)
     public void partyMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -181,9 +184,9 @@ public final class GameActivity extends AppCompatActivity {
         TextView currentDate = findViewById(R.id.date);
 
         gradesBar.incrementProgressBy(-6);
-        abilityBar.incrementProgressBy(-6);
+        abilityBar.incrementProgressBy(-5);
         mentalBar.incrementProgressBy(6);
-        socialBar.incrementProgressBy(6);
+        socialBar.incrementProgressBy(8);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
         activityLogText.append("You got absolutely hammered at a party and ascended into a state of Nirvana. \n");
