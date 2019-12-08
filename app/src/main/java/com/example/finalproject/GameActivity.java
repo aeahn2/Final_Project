@@ -3,7 +3,9 @@ package com.example.finalproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -88,6 +90,15 @@ public final class GameActivity extends AppCompatActivity {
         activityLogText.append("You spent hours toiling away on the MP. \n");
         activityDisplay.setText(activityLogText);
 
+        ScrollView scrollView = findViewById(R.id.activityLog);
+        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
+        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
+        int sy = scrollView.getScrollY();
+        int sh = scrollView.getHeight();
+        int delta = bottom - (sy + sh);
+
+        scrollView.smoothScrollBy(0, delta);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -112,6 +123,15 @@ public final class GameActivity extends AppCompatActivity {
         activityLogText.append("You spent quality time with your friends. \n");
         activityDisplay.setText(activityLogText);
 
+        ScrollView scrollView = findViewById(R.id.activityLog);
+        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
+        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
+        int sy = scrollView.getScrollY();
+        int sh = scrollView.getHeight();
+        int delta = bottom - (sy + sh);
+
+        scrollView.smoothScrollBy(0, delta);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -135,6 +155,15 @@ public final class GameActivity extends AppCompatActivity {
         activityLogText.append("You wasted an hour on daily homework. \n");
         activityDisplay.setText(activityLogText);
 
+        ScrollView scrollView = findViewById(R.id.activityLog);
+        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
+        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
+        int sy = scrollView.getScrollY();
+        int sh = scrollView.getHeight();
+        int delta = bottom - (sy + sh);
+
+        scrollView.smoothScrollBy(0, delta);
+
         date++;
         currentDate.setText(dateDisplay());
 
@@ -154,8 +183,17 @@ public final class GameActivity extends AppCompatActivity {
         socialBar.incrementProgressBy(6);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
-        activityLogText.append("You got absolutely hammered at a party and ascended into a state or Nirvana. \n");
+        activityLogText.append("You got absolutely hammered at a party and ascended into a state of Nirvana. \n");
         activityDisplay.setText(activityLogText);
+
+        ScrollView scrollView = findViewById(R.id.activityLog);
+        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
+        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
+        int sy = scrollView.getScrollY();
+        int sh = scrollView.getHeight();
+        int delta = bottom - (sy + sh);
+
+        scrollView.smoothScrollBy(0, delta);
 
         date++;
         currentDate.setText(dateDisplay());
