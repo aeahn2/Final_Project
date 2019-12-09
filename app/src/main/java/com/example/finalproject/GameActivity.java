@@ -131,13 +131,8 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
-        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
-        int sy = scrollView.getScrollY();
-        int sh = scrollView.getHeight();
-        int delta = bottom - (sy + sh);
+        scrollView.fullScroll(View.FOCUS_DOWN);
 
-        scrollView.smoothScrollBy(0, delta);
 
         date++;
         currentDate.setText(dateDisplay());
@@ -172,14 +167,7 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
-        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
-        int sy = scrollView.getScrollY();
-        int sh = scrollView.getHeight();
-        int delta = bottom - (sy + sh);
-        Log.i(TAG, Integer.toString(delta));
-
-        scrollView.smoothScrollBy(0, delta);
+        scrollView.fullScroll(View.FOCUS_DOWN);
 
         date++;
         currentDate.setText(dateDisplay());
@@ -213,13 +201,7 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
-        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
-        int sy = scrollView.getScrollY();
-        int sh = scrollView.getHeight();
-        int delta = bottom - (sy + sh);
-
-        scrollView.smoothScrollBy(0, delta);
+        scrollView.fullScroll(View.FOCUS_DOWN);
 
         date++;
         currentDate.setText(dateDisplay());
@@ -252,13 +234,7 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        View lastChild = scrollView.getChildAt(scrollView.getChildCount() - 1);
-        int bottom = lastChild.getBottom() + scrollView.getPaddingBottom();
-        int sy = scrollView.getScrollY();
-        int sh = scrollView.getHeight();
-        int delta = bottom - (sy + sh);
-
-        scrollView.smoothScrollBy(0, delta);
+        scrollView.fullScroll(View.FOCUS_DOWN);
 
         date++;
         currentDate.setText(dateDisplay());
@@ -271,8 +247,13 @@ public final class GameActivity extends AppCompatActivity {
             if (counterMP == 0) {
                 ProgressBar gradesBar = findViewById(R.id.gradesBar);
                 gradesBar.incrementProgressBy(-10);
+                TextView activityDisplay = findViewById(R.id.activityDisplay);
+
                 activityLogText.append("You forgot to work on your MP! Tears slide down your face as Geoff" +
                         " docks 10 points from your grade, a disappointed look on his angelic face. \n");
+                activityDisplay.setText(activityLogText);
+                ScrollView scrollView = findViewById(R.id.activityLog);
+                scrollView.fullScroll(View.FOCUS_DOWN);
             } else {
                 counterMP = 0;
             }
