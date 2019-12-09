@@ -1,6 +1,7 @@
 package com.example.finalproject;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,7 @@ public final class GameActivity extends AppCompatActivity {
         counterMP = 0;
 
 
+
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
         ProgressBar mentalBar = findViewById(R.id.mentalBar);
@@ -57,6 +59,9 @@ public final class GameActivity extends AppCompatActivity {
         currentDate.setText(dateDisplay());
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
+        MediaPlayer welcome = MediaPlayer.create(GameActivity.this,R.raw.welcome);
+        welcome.setVolume(1f, 1f);
+        welcome.start();
         activityLogText.append("Welcome to [enter game name later]! Today is your first day of CS 125. \n");
         if (intent.getStringExtra("mode").equals("Beginner")) {
             activityLogText.append("As a beginner CS student, your CS ability is low due to lack of experience, " +
@@ -69,14 +74,15 @@ public final class GameActivity extends AppCompatActivity {
         activityLogText.append("You walk into the lecture hall, along with over 200 other students." +
                 " As everyone settles down, you notice a beautiful, almost ethereal man donning a baseball cap on the stage." +
                 " He clears his throat and begins to speak in a low, chocolaty voice: \n");
-        activityLogText.append("'Welcome to CS 125. My name is Geoff Challen and I am your professor for this course." +
+        activityLogText.append("\"Welcome to CS 125. My name is Geoff Challen and I am your professor for this course." +
                 " CS 125 is 16 weeks long. Each week on Monday, Wednesday, Friday, and Sunday, " +
                 "you will choose an activity to do. Each activity affects your grades, CS ability, mental health, and social life" +
                 " in a different way. You can choose any activity you want, but try to keep all of your bars as high as possible. " +
                 "At the end of this course, you will receive a final grade that determines whether" +
                 " you pass or fail. Oh, and I almost forgot: your MP is due Sunday, and if you don't work on it at least once by then, " +
-                "your grade will drop 10 points--no extensions or exceptions! Good luck!' \n");
-        activityLogText.append("And with that, he disappeared in a puff of smoke, leaving you to with your newfound powers as a CS 125 student. \n");
+                "your grade will drop 10 points--no extensions or exceptions! Good luck!\" \n");
+        activityLogText.append("He takes off his cap, and the fluorescent lights above reflect off of his shiny, bald head. " +
+                "And with that, he disappears in a puff of smoke, leaving you with your newfound powers as a CS 125 student. \n");
         activityDisplay.setText(activityLogText);
 
         int grades = intent.getIntExtra("grades", 100);
@@ -105,7 +111,7 @@ public final class GameActivity extends AppCompatActivity {
     }
 
 
-//    Work on MP (Mental Health -6, Grades +8, Social Life -5, CS Ability +6)
+//    Work on MP (Mental Health -7, Grades +8, Social Life -5, CS Ability +6)
     public void workMPMethod() {
         counterMP++;
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
@@ -116,7 +122,7 @@ public final class GameActivity extends AppCompatActivity {
 
         gradesBar.incrementProgressBy(8);
         abilityBar.incrementProgressBy(6);
-        mentalBar.incrementProgressBy(-6);
+        mentalBar.incrementProgressBy(-7);
         socialBar.incrementProgressBy(-5);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
@@ -146,7 +152,7 @@ public final class GameActivity extends AppCompatActivity {
     }
 
 
-    //    Spend time with friends (Mental Health +4, Grades 0, Social Life +3, CS Ability -1)
+    //    Spend time with friends (Mental Health +3, Grades 0, Social Life +3, CS Ability -1)
     public void friendsMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -157,7 +163,7 @@ public final class GameActivity extends AppCompatActivity {
 
         gradesBar.incrementProgressBy(0);
         abilityBar.incrementProgressBy(-1);
-        mentalBar.incrementProgressBy(+4);
+        mentalBar.incrementProgressBy(+3);
         socialBar.incrementProgressBy(+3);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
@@ -187,7 +193,7 @@ public final class GameActivity extends AppCompatActivity {
 
     }
 
-    //    Do PrairieLearn (Mental Health -1, Grades +3, Social Life 0, CS Ability +3)
+    //    Do PrairieLearn (Mental Health -1, Grades +3, Social Life -1, CS Ability +3)
     public void prairieLearnMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -198,7 +204,7 @@ public final class GameActivity extends AppCompatActivity {
         gradesBar.incrementProgressBy(3);
         abilityBar.incrementProgressBy(3);
         mentalBar.incrementProgressBy(-1);
-        socialBar.incrementProgressBy(0);
+        socialBar.incrementProgressBy(-1);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
 
@@ -226,7 +232,7 @@ public final class GameActivity extends AppCompatActivity {
 
     }
 
-    //    Go to party (Mental Health +6, Grades -6, Social Life +8, CS Ability -5)
+    //    Go to party (Mental Health +5, Grades -6, Social Life +8, CS Ability -5)
     public void partyMethod() {
         ProgressBar gradesBar = findViewById(R.id.gradesBar);
         ProgressBar abilityBar = findViewById(R.id.abilityBar);
@@ -236,7 +242,7 @@ public final class GameActivity extends AppCompatActivity {
 
         gradesBar.incrementProgressBy(-6);
         abilityBar.incrementProgressBy(-5);
-        mentalBar.incrementProgressBy(6);
+        mentalBar.incrementProgressBy(5);
         socialBar.incrementProgressBy(8);
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
@@ -296,6 +302,9 @@ public final class GameActivity extends AppCompatActivity {
         if (counterMP == 0 && date == 4) {
             ProgressBar gradesBar = findViewById(R.id.gradesBar);
             gradesBar.incrementProgressBy(-10);
+
+            MediaPlayer disappointed = MediaPlayer.create(GameActivity.this,R.raw.disappointed);
+            disappointed.start();
             TextView activityDisplay = findViewById(R.id.activityDisplay);
 
             activityLogText.append("You forgot to work on your MP! Tears slide down your face as Geoff" +
