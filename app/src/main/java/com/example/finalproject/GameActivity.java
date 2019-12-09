@@ -131,10 +131,16 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        scrollView.fullScroll(View.FOCUS_DOWN);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_DOWN);
+            }
+        });
 
 
         date++;
+        checkMP();
         currentDate.setText(dateDisplay());
 
     }
@@ -167,9 +173,15 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        scrollView.fullScroll(View.FOCUS_DOWN);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_DOWN);
+            }
+        });
 
         date++;
+        checkMP();
         currentDate.setText(dateDisplay());
 
 
@@ -201,9 +213,15 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        scrollView.fullScroll(View.FOCUS_DOWN);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_DOWN);
+            }
+        });
 
         date++;
+        checkMP();
         currentDate.setText(dateDisplay());
 
     }
@@ -234,9 +252,15 @@ public final class GameActivity extends AppCompatActivity {
         activityDisplay.setText(activityLogText);
 
         ScrollView scrollView = findViewById(R.id.activityLog);
-        scrollView.fullScroll(View.FOCUS_DOWN);
+        scrollView.post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_DOWN);
+            }
+        });
 
         date++;
+        checkMP();
         currentDate.setText(dateDisplay());
 
     }
@@ -244,19 +268,6 @@ public final class GameActivity extends AppCompatActivity {
     public String dateDisplay() {
         Log.i(TAG, Integer.toString(counterMP));
         if (date == 4) {
-            if (counterMP == 0) {
-                ProgressBar gradesBar = findViewById(R.id.gradesBar);
-                gradesBar.incrementProgressBy(-10);
-                TextView activityDisplay = findViewById(R.id.activityDisplay);
-
-                activityLogText.append("You forgot to work on your MP! Tears slide down your face as Geoff" +
-                        " docks 10 points from your grade, a disappointed look on his angelic face. \n");
-                activityDisplay.setText(activityLogText);
-                ScrollView scrollView = findViewById(R.id.activityLog);
-                scrollView.fullScroll(View.FOCUS_DOWN);
-            } else {
-                counterMP = 0;
-            }
             date = 0;
             weekCounter++;
         }
@@ -278,6 +289,24 @@ public final class GameActivity extends AppCompatActivity {
             finish();
         }
         return ("Week " + weekCounter + ": " + weekArray[date % 4]);
+    }
+
+    public void checkMP() {
+        Log.i(TAG, Integer.toString(counterMP));
+        if (counterMP == 0 && date == 4) {
+            ProgressBar gradesBar = findViewById(R.id.gradesBar);
+            gradesBar.incrementProgressBy(-10);
+            TextView activityDisplay = findViewById(R.id.activityDisplay);
+
+            activityLogText.append("You forgot to work on your MP! Tears slide down your face as Geoff" +
+                    " docks 10 points from your grade, a disappointed look on his angelic face. \n");
+            activityDisplay.setText(activityLogText);
+            ScrollView scrollView = findViewById(R.id.activityLog);
+            scrollView.fullScroll(View.FOCUS_DOWN);
+        } else if (date == 4){
+            counterMP = 0;
+        }
+
     }
 
 }
