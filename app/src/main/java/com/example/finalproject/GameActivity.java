@@ -82,7 +82,7 @@ public final class GameActivity extends AppCompatActivity {
                 " you pass or fail. Oh, and I almost forgot: your MP is due Sunday, and if you don't work on it at least once by then, " +
                 "your grade will drop 10 points--no extensions or exceptions! Good luck!\" \n");
         activityLogText.append("He takes off his cap, and the fluorescent lights above reflect off of his shiny, bald head. " +
-                "And with that, he disappears in a puff of smoke, leaving you with your newfound powers as a CS 125 student. \n");
+                "And with that, he disappears in a puff of smoke, leaving you with your newfound powers as a CS 125 student. \n" + "\n");
         activityDisplay.setText(activityLogText);
 
         int grades = intent.getIntExtra("grades", 100);
@@ -127,9 +127,9 @@ public final class GameActivity extends AppCompatActivity {
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
 
-        List<String> givenList = Arrays.asList("You spent hours toiling away on the MP. \n",
-                "Your eyes go blurry from staring at your MP. \n",
-                "You make some more progress on the MP. \n");
+        List<String> givenList = Arrays.asList("You spent hours toiling away on the MP. \n \n",
+                "Your eyes go blurry from staring at your MP. \n \n",
+                "You make some more progress on the MP. \n \n");
         Random rand = new Random();
         String randomElement = givenList.get(rand.nextInt(givenList.size()));
 
@@ -168,9 +168,9 @@ public final class GameActivity extends AppCompatActivity {
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
 
-        List<String> givenList = Arrays.asList("You spent quality time with your friends. \n",
-                "You join your friends for a movie night. \n",
-                "You decide to go to the ARC with your friends. \n");
+        List<String> givenList = Arrays.asList("You spent quality time with your friends. \n \n",
+                "You join your friends for a movie night. \n \n",
+                "You decide to go to the ARC with your friends. \n \n");
         Random rand = new Random();
         String randomElement = givenList.get(rand.nextInt(givenList.size()));
 
@@ -208,9 +208,9 @@ public final class GameActivity extends AppCompatActivity {
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
 
-        List<String> givenList = Arrays.asList("You wasted an hour on daily homework. \n",
-                "Your homework is especially easy today, and you crank it out in 10 minutes. \n",
-                "Geoff's voice in your head urges you to finish your daily homework. \n");
+        List<String> givenList = Arrays.asList("You wasted an hour on daily homework. \n \n",
+                "Your homework is especially easy today, and you crank it out in 10 minutes. \n \n",
+                "Geoff's voice in your head urges you to finish your daily homework. \n \n");
         Random rand = new Random();
         String randomElement = givenList.get(rand.nextInt(givenList.size()));
 
@@ -247,9 +247,9 @@ public final class GameActivity extends AppCompatActivity {
 
         TextView activityDisplay = findViewById(R.id.activityDisplay);
 
-        List<String> givenList = Arrays.asList("You got absolutely hammered at a party and ascended into a state of Nirvana. \n",
-                "You go wild on the dance floor at a party and videos of your moves go viral. \n",
-                "You convince yourself that 'Geoff wouldn't mind' and head out to a midnight party. \n");
+        List<String> givenList = Arrays.asList("You got absolutely hammered at a party and ascended into a state of Nirvana. \n \n",
+                "You go wild on the dance floor at a party and videos of your moves go viral. \n \n",
+                "You convince yourself that 'Geoff wouldn't mind' and head out to a midnight party. \n \n");
         Random rand = new Random();
         String randomElement = givenList.get(rand.nextInt(givenList.size()));
 
@@ -308,7 +308,7 @@ public final class GameActivity extends AppCompatActivity {
             TextView activityDisplay = findViewById(R.id.activityDisplay);
 
             activityLogText.append("You forgot to work on your MP! Tears slide down your face as Geoff" +
-                    " docks 10 points from your grade, a disappointed look on his angelic face. \n");
+                    " docks 10 points from your grade, a disappointed look on his angelic face. \n \n");
             activityDisplay.setText(activityLogText);
             ScrollView scrollView = findViewById(R.id.activityLog);
             scrollView.fullScroll(View.FOCUS_DOWN);
