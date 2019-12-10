@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -73,9 +74,13 @@ public final class EndGameActivity extends AppCompatActivity {
         if (grades >= 70 && score >= 70) {
             passFail.setText("PASSED");
             passFail.setTextColor(Color.GREEN);
+            MediaPlayer cheering = MediaPlayer.create(EndGameActivity.this,R.raw.cheering);
+            cheering.start();
         } else {
             passFail.setText("FAILED");
             passFail.setTextColor(Color.RED);
+            MediaPlayer fail = MediaPlayer.create(EndGameActivity.this,R.raw.fail);
+            fail.start();
         }
 
         Button playAgain = findViewById(R.id.playAgain);
