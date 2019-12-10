@@ -15,9 +15,10 @@
             android:id="@+id/logoButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#FFFFFF"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/logo_foreground" />
+            app:srcCompat="@drawable/newlogo" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
