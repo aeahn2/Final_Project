@@ -61,7 +61,7 @@ public final class GameActivity extends AppCompatActivity {
         MediaPlayer welcome = MediaPlayer.create(GameActivity.this,R.raw.welcome);
         welcome.setVolume(1f, 1f);
         welcome.start();
-        activityLogText.append("Welcome to [enter game name later]! Today is your first day of CS 125. \n");
+        activityLogText.append("Welcome to ChallenLife! Today is your first day of CS 125. \n");
         if (intent.getStringExtra("mode").equals("Beginner")) {
             activityLogText.append("As a beginner CS student, your CS ability is low due to lack of experience, " +
                     "but your mental health is high as a young, naive CS prospect. \n");
