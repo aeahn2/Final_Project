@@ -1,2 +1,2 @@
-# Final_Project
-CS 125
+# ChallenLife
+ChallenLife is our final project for CS 125 (Intro to CS). It is a life simulator game app made in Android Studio using Java, and simulates the life of a student taking CS 125 with Professor Challen (aka Geoff). The player chooses which activity to do each day, making sure that the MP is completed by each Sunday, and the progress bars and activity log reflect the activities and their effects on the player's grades, CS ability, mental health, and social life. At the end of the game, the pllayer receives a grade based on each of the progress bars.
